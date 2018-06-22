@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>垂直折叠菜单</title>
+	<style>
+		/* 样式初始化  */
+
+		html,
+		body,
+		ul,
+		li {
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		ul li {
+			list-style: none;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		/* 页面样式  */
+
+		.left {
+			width: 200px;
+			height: 100%;
+			background: #000f1e;
+		}
+
+		.left a {
+			color: #fff;
+			height: 50px;
+			width: 100%;
+		}
+
+		ul.bigul {
+			width: 100%;
+			height: 100%;
+			overflow-y: auto;
+		}
+
+		ul.bigul li {
+			box-sizing: border-box;
+			line-height: 50px;
+			padding-left: 10px;
+		}
+
+		ul.bigul li:hover {
+			cursor: pointer;
+		}
+
+		ul.bigul li:hover {
+			background: #1a2735;
+		}
+
+		ul.bigul li ul {
+			position: relative;
+			background: #1a2735;
+			display: none;
+		}
+
+		ul.bigul li ul li:hover {
+			background: #313d4a;
+		}
+	</style>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+	<!-- 注意点大概就是不要给定 li 标签的高度，不然会撑不开。 -->
+	<div class="left">
+		<ul class="bigul">
+			<li>
+				<a href="#">一级菜单</a>
+				<ul>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">一级菜单</a>
+			</li>
+			<li>
+				<a href="#">一级菜单</a>
+			</li>
+			<li>
+				<a href="#">一级菜单</a>
+				<ul>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+					<li>
+						<a href="#">二级菜单</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">一级菜单</a>
+			</li>
+		</ul>
+	</div>
+	<script>
+		$(document).ready(function () {
+			$("ul.bigul li>a").click(function () {
+				$(this).next().toggle();
+				return false;
+			})
+		})
+	</script>
+</body>
+
+</html>
